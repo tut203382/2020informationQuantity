@@ -6,8 +6,8 @@ all:
 
 # 利用する場合は s4.学籍番号/プログラム名 になるように書き換える
 run:
-	java -classpath "../.." s4.B203382/Hello
-#	java -classpath "../.." s4.B203382/Frequencer
+#	java -classpath "../.." s4.B203382/Hello
+	java -classpath "../.." s4.B203382/Frequencer
 #	java -classpath "../.." s4.B203382/InformationEstimator
 #	java -classpath "../.." s4.B203382/TestCase
 
