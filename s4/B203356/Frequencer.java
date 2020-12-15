@@ -73,14 +73,18 @@ public class Frequencer implements FrequencerInterface{
         // ここにコードを記述せよ 
         //                                 
 
-        if(mySpace[i]==mySpace[j]){
+        if(i==mySpace.length){
+            if(j==mySpace.length)
+                return 0;
+            return -1;
+        }else if(j==mySpace.length)
+            return 1;
+        else if(mySpace[i]==mySpace[j]){
             return suffixCompare(i+1, j+1);
         }else if(mySpace[i]<mySpace[j])
             return -1;
         else
             return 1;
-            
-        
 
         //return 0; // この行は変更しなければいけない。 
     }
@@ -114,7 +118,7 @@ public class Frequencer implements FrequencerInterface{
         int compare;
         int temp;
         for(int i=0;i<space.length-1;i++){
-            for(int j=space.length;j>i;j--){
+            for(int j=space.length-1;j>i;j--){
                 compare = suffixCompare(suffixArray[j-1],suffixArray[j]);
                 if(compare>0){
                     temp=suffixArray[j];
