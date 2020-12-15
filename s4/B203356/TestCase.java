@@ -47,6 +47,22 @@ public class TestCase {
 	    if(4 != freq) {System.out.println("frequency() for Hi_Ho_Hi_Ho, should return 4, when taget is H. But it returns "+freq); c++; }
 
 	    // Write your testCase here
+		myObject.setSpace("".getBytes());
+	    myObject.setTarget("A".getBytes());
+	    freq = myObject.frequency();
+	    if(0 != freq) {System.out.println("frequency() for \"\"(length=0), should return 0, when taget is A. But it returns "+freq); c++; }
+
+		myObject.setSpace("Hi Ho Hi Ho".getBytes());
+		myObject.setTarget("".getBytes());
+	    freq = myObject.frequency();
+		if(-1 != freq) {System.out.println("frequency() for Hi_Ho_Hi_Ho, should return -1, when taget is \"\"(length=0). But it returns "+freq); c++; }
+
+		//Exception : Space[5] access
+		myObject.setSpace("atori".getBytes());
+		myObject.setTarget("atorii".getBytes());
+	    freq = myObject.frequency();
+		if(0 != freq) {System.out.println("frequency() for atori, should return 0, when taget is nagata. But it returns "+freq); c++; }
+
 
 	}
 	catch(Exception e) {
