@@ -71,8 +71,18 @@ public class Frequencer implements FrequencerInterface{
         // if suffix_i = suffix_j, it returns 0;   
 
         // ここにコードを記述せよ 
-        //                                          
-        return 0; // この行は変更しなければいけない。 
+        //                                 
+
+        if(mySpace[i]==mySpace[j]){
+            return suffixCompare(i+1, j+1);
+        }else if(mySpace[i]<mySpace[j])
+            return -1;
+        else
+            return 1;
+            
+        
+
+        //return 0; // この行は変更しなければいけない。 
     }
 
     public void setSpace(byte []space) { 
@@ -100,6 +110,20 @@ public class Frequencer implements FrequencerInterface{
         //   suffixArray[ 1]= 1:BA
         //   suffixArray[ 2]= 0:CBA
         // のようになるべきである。
+
+        int compare;
+        int temp;
+        for(int i=0;i<space.length-1;i++){
+            for(int j=space.length;j>i;j--){
+                compare = suffixCompare(suffixArray[j-1],suffixArray[j]);
+                if(compare>0){
+                    temp=suffixArray[j];
+                    suffixArray[j]=suffixArray[j-1];
+                    suffixArray[j-1]=temp;
+                }
+            }
+        }
+
     }
 
     // ここから始まり、指定する範囲までは変更してはならないコードである。
@@ -176,6 +200,9 @@ public class Frequencer implements FrequencerInterface{
         //
         // ここに比較のコードを書け 
         //
+
+
+
         return 0; // この行は変更しなければならない。
     }
 
