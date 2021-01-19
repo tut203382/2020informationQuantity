@@ -427,7 +427,7 @@ public class Frequencer implements FrequencerInterface{
     public static void main(String[] args) {
         Frequencer frequencerObject;
         try { // テストに使うのに推奨するmySpaceの文字は、"ABC", "CBA", "HHH", "Hi Ho Hi Ho".
-            /*frequencerObject = new Frequencer();
+            frequencerObject = new Frequencer();
             frequencerObject.setSpace("ABC".getBytes());
             frequencerObject.printSuffixArray();
             frequencerObject = new Frequencer();
@@ -435,7 +435,7 @@ public class Frequencer implements FrequencerInterface{
             frequencerObject.printSuffixArray();
             frequencerObject = new Frequencer();
             frequencerObject.setSpace("HHH".getBytes());
-            frequencerObject.printSuffixArray();*/
+            frequencerObject.printSuffixArray();
             frequencerObject = new Frequencer();
             //frequencerObject.setSpace("Hi Ho Hi Ho".getBytes());
             //frequencerObject.printSuffixArray();

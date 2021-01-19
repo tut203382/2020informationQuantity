@@ -58,19 +58,13 @@ public class InformationEstimator implements InformationEstimatorInterface {
 
         for (int i = 0; i < myTarget.length; i++) { 
             iqResult[i] = Double.MAX_VALUE;
-            //先頭からn番目までの計算結果を配列のn-1番目に保存(分割されていない場合)
             myFrequencer.setTarget(subBytes(myTarget, 0, i+1)); 
             double value = iq(myFrequencer.frequency());
-
             if (value < iqResult[i])
                 iqResult[i] = value;
-
-            //それ以前の文字までの分割と、n番目の文字の情報量を合計する(i番目以前のいずれかで分割されている場合)
             for (int j = i - 1; j >= 0; j--) {
                 myFrequencer.setTarget(subBytes(myTarget, j+1, i+1));
                 value = iqResult[j] + iq(myFrequencer.frequency());
-
-                //より小さいものがあれば更新
                 if (value < iqResult[i])
                     iqResult[i] = value;
             }
@@ -114,7 +108,6 @@ public class InformationEstimator implements InformationEstimatorInterface {
         }
         return value;*/
     }
-
     public static void main(String[] args) {
         InformationEstimator myObject;
         double value;

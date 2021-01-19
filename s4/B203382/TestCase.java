@@ -126,7 +126,7 @@ public class TestCase {
 	    System.out.println("Exception occurred in Frequencer Object: STOP");
 	    c++;
 	}
-/*
+
 	try {
 	    InformationEstimatorInterface myObject;
 	    double value;
@@ -149,7 +149,7 @@ public class TestCase {
 	catch(Exception e) {
 	    System.out.println("Exception occurred: STOP");
 	    c++;
-	}*/
+	}
 	if(c == 0) { System.out.println("TestCase OK"); }
     }
 }
