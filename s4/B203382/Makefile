@@ -8,8 +8,8 @@ all:
 run:
 #	java -classpath "../.." s4.B203382/Hello
 #	java -classpath "../.." s4.B203382/Frequencer
-	java -classpath "../.." s4.B203382/InformationEstimator
-#	java -classpath "../.." s4.B203382/TestCase
+#	java -classpath "../.." s4.B203382/InformationEstimator
+	java -classpath "../.." s4.B203382/TestCase
 
 # runやrunHelloなどがファイル名ではなくターゲット名であることをmakeに伝えるための定義
 .PNOHY: run runHello runFrequencer runInformationEstimator runTestCase
